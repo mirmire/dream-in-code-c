@@ -8,31 +8,18 @@ int main()
     printf("Vowels in: ");
     while((c = getchar()) != EOF && c != '\n') 
     {
-        if (c == 'a' || c == 'A')
+        for(int i = 0; i < 5; i++)
         {
-            ++vcount[0];
-        }
-        if (c == 'e' || c == 'E')
-        {
-            ++vcount[1];
-        }
-        if (c == 'i' || c == 'I')
-        {
-            ++vcount[2];
-        }
-        if (c == 'o' || c == 'O')
-        {
-            ++vcount[3];
-        }
-        if (c == 'u' || c == 'U')
-        {
-            ++vcount[4];
+            if (vowels[i] == c)
+            {
+                ++vcount[i];  // add count to corresponding vcount array
+            }
         }
     }
-    printf("The result: \n");
+    printf("Vowel  Count\n");
     for(int i = 0; i < 5; i++)
     {
-        printf("%c : %d\n", vowels[i],vcount[i]);
+        printf("%3c  %5d\n", vowels[i],vcount[i]);
     }
     return 0;
 }
