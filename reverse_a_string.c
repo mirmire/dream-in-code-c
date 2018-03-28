@@ -3,12 +3,17 @@
 #include <string.h>
 int main()
 {
-    int a, b = 0;
-    char original[15], reversed[15];
-    printf("Type the string to be reversed (15 chars. max): ");
-    scanf("%s", original);
+    int a, b = 0, i = 0;
+    char c, original[100], reversed[100];
+    printf("Type the string to be reversed (100 chars. max): ");
+    //scanf("%s", original);
+    while((c = getchar()) != '\n' && c != EOF)
+    {
+        original[i] = c;
+        ++i;
+    }
     a = strlen(original);
-    while ( b <= a + 14) 
+    while ( b <= a + 99) 
     {
         reversed[b] = original[a - 1];
         b++;
