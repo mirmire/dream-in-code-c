@@ -3,19 +3,36 @@
 int main()
 {
     char c;
-    int vowel_count = 0;
-    const char vowels[5] = {'a', 'e', 'i', 'o', 'u'};
+    int vcount[5] = {[0] = 0}; // create an empty array with all elements 0
+    const char vowels[] = {'a', 'e', 'i', 'o', 'u'};
     printf("Vowels in: ");
     while((c = getchar()) != EOF && c != '\n') 
     {
-        for(int i = 0; i < 5; i++)
+        if (c == 'a' || c == 'A')
         {
-            if(vowels[i] == c)
-            {
-                ++vowel_count;
-            }
+            ++vcount[0];
+        }
+        if (c == 'e' || c == 'E')
+        {
+            ++vcount[1];
+        }
+        if (c == 'i' || c == 'I')
+        {
+            ++vcount[2];
+        }
+        if (c == 'o' || c == 'O')
+        {
+            ++vcount[3];
+        }
+        if (c == 'u' || c == 'U')
+        {
+            ++vcount[4];
         }
     }
-    printf("There were %d vowels.\n", vowel_count);
+    printf("The result: \n");
+    for(int i = 0; i < 5; i++)
+    {
+        printf("%c : %d\n", vowels[i],vcount[i]);
+    }
     return 0;
 }
